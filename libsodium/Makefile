@@ -20,22 +20,22 @@ PKG_INSTALL:=1
 include $(INCLUDE_DIR)/package.mk
 
 define Package/libsodium
-  SECTION:=libs
-  CATEGORY:=Libraries
-  TITLE:=NaCl-based crypto library
-  URL:=http://github.com/jedisct1/libsodium
+	SECTION:=libs
+	CATEGORY:=Libraries
+	TITLE:=NaCl-based crypto library
+	URL:=http://github.com/jedisct1/libsodium
 endef
 
 define Build/Configure
-       $(call Build/Configure/Default,--enable-shared=no)
+	$(call Build/Configure/Default,--enable-shared=no)
 endef
 
 define Build/InstallDev
-       $(INSTALL_DIR) $(1)/usr/include/sodium
-       $(CP) $(PKG_INSTALL_DIR)/usr/include/sodium.h $(1)/usr/include
-       $(CP) $(PKG_INSTALL_DIR)/usr/include/sodium/*.h $(1)/usr/include/sodium
-       $(INSTALL_DIR) $(1)/usr/lib
-       $(CP) $(PKG_INSTALL_DIR)/usr/lib/libsodium.a $(1)/usr/lib
+	$(INSTALL_DIR) $(1)/usr/include/sodium
+	$(CP) $(PKG_INSTALL_DIR)/usr/include/sodium.h $(1)/usr/include
+	$(CP) $(PKG_INSTALL_DIR)/usr/include/sodium/*.h $(1)/usr/include/sodium
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libsodium.a $(1)/usr/lib
 endef
 
 $(eval $(call BuildPackage,libsodium))
