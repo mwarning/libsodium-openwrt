@@ -31,7 +31,7 @@ cd openwrt
 ./scripts/feeds install -a
 
 git clone https://github.com/mwarning/libsodium-openwrt.git
-cp -r /libsodium-openwrt/libsodium package/
+cp -r libsodium-openwrt/libsodium package/
 rm -rf libsodium-openwrt
 
 make defconfig
