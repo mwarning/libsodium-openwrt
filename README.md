@@ -2,41 +2,40 @@ libsodium-openwrt
 =================
 
 A simple [OpenWrt](https://openwrt.org) package for the [libsodium](https://github.com/jedisct1/libsodium) library.
-This package makes libsodium avaialbe to other programs during the build progress (for static linking).
-The code is released under Public Domain.
+The code is released under the GPLv2 license.
 
-### Package notes
+### How to build a OpenWrt .ipk package
 
-This package does only build libsodium as part of the build environment.
-That means that libsodium will be only included when linked as static
-library by some other program during the image build process.
-
-That is why we have no release libsodium packages here.
-But that would be possible when the script would be changed
-to create a dynamic library.
-
-Static linking makes sense when not all parts of libsodium are used since
-OpenWrt is used for embedded devices (mostly WLAN-routers).
-When libsodium is linked by multiple programs then those parts
-are compressed by the filesystem to take up space only once.
-
-### How to build a OpenWrt image
-
-These commands show how to build an OpenWrt image including libsodium
+These commands show how to build an OpenWrt image and .ipk package of libsodium
 <pre>
-git clone git://git.openwrt.org/12.09/openwrt.git
+git clone git://git.openwrt.org/openwrt.git
 cd openwrt
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-git clone https://github.com/mwarning/libsodium-openwrt.git
-cp -r libsodium-openwrt/libsodium package/
-rm -rf libsodium-openwrt
+echo "src-git libsodium git://github.com/mwarning/libsodium-openwrt.git" >> feeds.conf
 
 make defconfig
 make menuconfig
-#select target hardware and libs => libsodium
+</pre>
+
+You are now shown the OpenWrt configuration interface.
+Select the appropiate "Target System" and "Target Profile".
+This depends on what target chipset/router you want to build for.
+You also need to select the OpenWrt SDK option and libsodium:
+
+<pre>
+Target System (Atheros AR7xxx/AR9xxx)
+Target Profile (TP-LINK TL-WR841N/ND)
+[*] Build the OpenWrt SDK
+Libraries  ---> <*> libsodium
+</pre>
+
+Exit and save the settings. Then build the packages/images:
+
+<pre>
 make
 </pre>
 
+The ipk packages can now be found in `bin/ar71xx/packages/libsodium_0.6.1-1_ar71xx.ipk`.
