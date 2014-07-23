@@ -48,7 +48,7 @@ endef
 
 CONFIGURE_ARGS+= \
 	--disable-ssp \
-	$(if $(LIBSODIUM_MINIMAL),--enable-minimal=yes,--enable-minimal=no)
+	$(if $(CONFIG_LIBSODIUM_MINIMAL),--enable-minimal=yes,--enable-minimal=no)
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/sodium
