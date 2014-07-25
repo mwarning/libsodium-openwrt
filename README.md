@@ -4,7 +4,11 @@ libsodium-openwrt
 A simple [OpenWrt](https://openwrt.org) package for the [libsodium](https://github.com/jedisct1/libsodium) library.
 The code is released under the GPLv2 license.
 
-### How to build a OpenWrt .ipk package
+### Where to download packages?
+
+Check the [release section](https://github.com/mwarning/libsodium-openwrt/releases) for the most recent release!
+
+### How to build a OpenWrt .ipk package?
 
 These commands show how to build an OpenWrt image and .ipk package of libsodium
 <pre>
