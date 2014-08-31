@@ -15,7 +15,7 @@ These commands show how to build an OpenWrt image and .ipk package of libsodium
 git clone git://git.openwrt.org/openwrt.git
 cd openwrt
 
-echo "src-git libsodium git://github.com/mwarning/libsodium-openwrt.git" >> feeds.conf
+echo "src-git libsodium git://github.com/mwarning/libsodium-openwrt.git" >> feeds.conf.default
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
