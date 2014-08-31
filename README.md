@@ -12,7 +12,7 @@ Check the [release section](https://github.com/mwarning/libsodium-openwrt/releas
 
 These commands show how to build an OpenWrt image and .ipk package of libsodium
 <pre>
-git clone git://git.openwrt.org/openwrt.git
+git clone git://git.openwrt.org/14.07/openwrt.git
 cd openwrt
 
 echo "src-git libsodium git://github.com/mwarning/libsodium-openwrt.git" >> feeds.conf.default
