@@ -1,3 +1,5 @@
+*libsodium is in the openwrt package feed now and maintenance will happen there*
+
 libsodium-openwrt
 =================
 
