@@ -8,13 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libsodium
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.10
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://download.libsodium.org/libsodium/releases
-PKG_MD5SUM:=3093dabe4e038d09f0d150cef064b2f7
+PKG_MD5SUM:=ea89dcbbda0b2b6ff6a1c476231870dd
 PKG_CAT:=zcat
 
 PKG_FIXUP:=libtool autoreconf
@@ -48,7 +48,7 @@ menu "Configuration"
 	depends on PACKAGE_libsodium
 	config LIBSODIUM_MINIMAL
 		bool "Compile only what is required for the high-level API (no aes128ctr), should be fine in most cases."
-		default y
+		default n
 endmenu
 endef
 
