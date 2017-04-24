@@ -1,4 +1,4 @@
-*libsodium is in the openwrt package feed now and maintenance will happen there*
+*libsodium is in the [openwrt package feed](https://github.com/openwrt/packages/tree/master/libs/libsodium) now and maintenance will happen there*
 
 libsodium-openwrt
 =================
